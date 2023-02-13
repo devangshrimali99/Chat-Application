@@ -1,0 +1,563 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+:root {
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: #006cff;
+  --second-color: #055edb;
+  --title-color: hsl(244, 12%, 12%);
+  --text-color: hsl(244, 4%, 36%);
+  --body-color: hsl(208, 97%, 85%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Poppins", sans-serif;
+  --h2-font-size: 1.25rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+}
+
+/* Responsive typography */
+@media screen and (min-width: 1024px) {
+  :root {
+    --h2-font-size: 1.75rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin laptop {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+// -------------------LOGIN PAGE STYLING-------------------
+
+// -------------------RESPONSIVE_PART-------------------
+@media screen and (max-width: 360px) {
+  .login__buttons {
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .login__form {
+    width: 450px;
+    justify-self: center;
+  }
+}
+
+@media screen and (min-width: 1064px) {
+  .container__login {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+  }
+  .login__content {
+    width: 100%;
+  }
+  .login__img {
+    box-shadow: 0 24px 48px #1275e5;
+  }
+  .login__form {
+    justify-self: flex-end;
+    margin-right: 4.5rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .login__content {
+    height: 700px;
+  }
+  .login__form {
+    row-gap: 2rem;
+    padding: 3rem;
+    border-radius: 1.25rem;
+    border: 2.5px solid hsla(244, 16%, 92%, 0.75);
+  }
+  .login__description,
+  .login__label,
+  .login__button {
+    font-size: var(--normal-font-size);
+  }
+  .login__inputs {
+    row-gap: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  .login__input {
+    border: 2.5px solid var(--text-color);
+    padding: 1rem;
+    font-size: var(--small-font-size);
+  }
+  .login__input:focus,
+  .login__input:valid {
+    border: 2.5px solid var(--first-color);
+  }
+  .login__button {
+    padding-block: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  // .login__button-ghost {
+  // border: 2.5px solid var(--first-color);
+  // }
+}
+
+//-------------------Main Styling(Login Page)-------------------
+.login__inputs {
+  display: grid;
+}
+.login__content {
+  display: grid;
+  position: relative;
+  height: 100vh;
+  align-items: center;
+}
+.login__img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.login__form {
+  display: grid;
+  position: relative;
+  background-color: hsla(244, 16%, 92%, 0.6);
+  border: 2px solid hsla(244, 16%, 92%, 0.75);
+  margin-inline: 1.5rem;
+  row-gap: 1.25rem;
+  backdrop-filter: blur(20px);
+  padding: 2rem 4rem;
+
+  border-radius: 1rem;
+}
+
+.login__title {
+  color: var(--title-color);
+  font-weight: 600;
+  font-size: 1.7rem;
+
+  margin-bottom: 0.5rem;
+}
+
+.login__title span {
+  color: #0e71e0;
+}
+
+.login__description {
+  font-size: 0.94rem;
+}
+.login__inputs {
+  row-gap: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.login__label {
+  display: block;
+  color: var(--title-color);
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: 0.25rem;
+}
+.login__input {
+  width: 100%;
+  padding: 14px 12px;
+  border-radius: 6px;
+  border: 2px solid var(--text-color);
+  background-color: hsla(244, 16%, 92%, 0.6);
+  color: var(--title-color);
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-medium);
+  transition: border 0.4s;
+}
+
+.login__input::placeholder {
+  color: var(--text-color);
+}
+
+.login__input:focus,
+.login__input:valid {
+  border: 2px solid var(--first-color);
+}
+
+.login__box {
+  position: relative;
+}
+
+.login__buttons {
+  display: flex;
+  column-gap: 0.75rem;
+}
+
+.login__button {
+  width: 100%;
+  padding: 14px 2rem;
+  border-radius: 6px;
+  background: linear-gradient(180deg, #006cff, #0256cb);
+  color: #fff;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+  box-shadow: 0 3px 30px #c2bfbf;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+.login__button_signup {
+  text-decoration: none;
+  color: #fff;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+}
+
+// Home Page Styling
+
+.userChatInfo__search {
+  color: rgb(1, 24, 75);
+  font-weight: 500;
+}
+
+.home {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    // @include tablet {
+    //  width: 90%;
+    // }
+
+    .sidebar {
+      flex: 1;
+      background-color: #1e1f22;
+      position: relative;
+      max-width: 35%;
+      box-shadow: 1px 1px 2px #0b1d39;
+      .navbar {
+        display: flex;
+        align-items: center;
+        background-color: #2176ff;
+        height: 50px;
+        padding: 10px;
+        justify-content: space-between;
+        color: #ffffff;
+
+        .logo {
+          font-weight: 400;
+          font-size: 22px;
+          margin-left: 8px;
+          @include tablet {
+            display: none;
+          }
+        }
+
+        .user {
+          display: flex;
+          gap: 10px;
+          margin-left: 10px;
+          align-items: center;
+          span {
+            width: 80px;
+          }
+          img {
+            background-color: #ddddf7;
+            height: 48px;
+            width: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          button {
+            background-color: #ffffff;
+            color: #000d28;
+            border-radius: 6px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 12px;
+            padding-left: 12px;
+            margin-right: 4px;
+            font-size: 11px;
+            margin-left: 8px;
+            border: none;
+            cursor: pointer;
+            @media screen and (max-width: 980px) {
+              position: absolute;
+              bottom: 10px;
+              margin-left: 0px;
+            }
+          }
+        }
+      }
+      .search {
+        // border-bottom: 1px solid rgb(224, 214, 214);
+        background-color: rgb(255, 255, 255);
+        border-radius: 40px;
+        margin: 14px 8px;
+
+        .searchForm {
+          padding: 10px;
+
+          input {
+            background-color: transparent;
+            border: none;
+            color: rgb(0, 0, 0);
+            outline: none;
+            padding-left: 6px;
+
+            &::placeholder {
+              color: rgb(78, 77, 77);
+            }
+          }
+        }
+      }
+
+      .userChat {
+        margin-left: 8px;
+        margin-right: 8px;
+        margin-top: 1px;
+        margin-bottom: 1px;
+        padding: 12px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+
+        &:hover {
+          background-color: rgb(234, 234, 234);
+          border-radius: 50px;
+          color: #00081c;
+          .userChatInfo {
+            p {
+              color: rgb(1, 23, 52);
+            }
+          }
+        }
+
+        img {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        .userChatInfo {
+          span {
+            font-size: 18px;
+            font-weight: 500;
+          }
+          p {
+            margin-top: 2px;
+            font-size: 14px;
+            color: #d7d7d7;
+          }
+        }
+      }
+    }
+    .chat {
+      flex: 2;
+
+      .chatInfo {
+        height: 50px;
+        background-color: #2176ff;
+        display: flex;
+
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+
+        color: rgb(255, 255, 255);
+        span {
+          margin-left: 20px;
+          font-weight: 400;
+          font-size: 18px;
+        }
+      }
+
+      .chatIcons {
+        display: flex;
+        gap: 10px;
+
+        img {
+          height: 24px;
+          cursor: pointer;
+        }
+      }
+
+      .messages {
+        background-color: #ffffff;
+        padding: 10px;
+        height: calc(100% - 160px);
+        overflow: scroll;
+
+        .message {
+          display: flex;
+          gap: 20px;
+          margin-bottom: 20px;
+
+          .messageInfo {
+            display: flex;
+            flex-direction: column;
+            color: gray;
+            font-weight: 300;
+
+            img {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+          }
+          .messageContent {
+            max-width: 80%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            p {
+              background-color: rgba(226, 225, 225, 0.65);
+              padding: 10px 20px;
+              border-radius: 0px 10px 10px 10px;
+              max-width: max-content;
+            }
+
+            img {
+              width: 50%;
+            }
+          }
+
+          &.owner {
+            flex-direction: row-reverse;
+
+            .messageContent {
+              align-items: flex-end;
+              p {
+                background-color: #2176ff;
+                color: white;
+                border-radius: 10px 0px 10px 10px;
+              }
+            }
+          }
+        }
+      }
+
+      .input {
+        height: 50px;
+        background-color: #2176ff;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        input {
+          width: 75%;
+          height: 44px;
+          font-size: 18px;
+          border-radius: 18px;
+          padding-left: 10px;
+          border-color: #217dff;
+          &::placeholder {
+            color: rgb(117, 117, 117);
+            background-color: rgba(255, 255, 255, 0.65);
+          }
+        }
+
+        .send {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          img {
+            height: 28px;
+            cursor: pointer;
+            margin-left: 16px;
+            margin-right: -2px;
+          }
+
+          button {
+            border: none;
+            padding: 12px 36px;
+            color: rgb(117, 117, 117);
+            border-color: #217xdff;
+            border-radius: 18px;
+            background-color: #fff;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*=============== VARIABLES CSS ===============*/
+
+/*=============== BASE ===============*/
+// * {
+//   box-sizing: border-box;
+//   padding: 0;
+//   margin: 0;
+// }
+
+// body {
+//   background-color: var(--body-color);
+//   font-family: var(--body-font);
+//   color: var(--text-color);
+// }
+
+// input,
+// button {
+//   font-family: var(--body-font);
+//   border: none;
+//   outline: none;
+// }
+
+// img {
+//   max-width: 100%;
+//   height: auto;
+// }
+
+/*=============== LOGIN FORM ===============*/
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+
+/* For medium devices */
+
+/* For large devices */
+
+// <div className="formContainer">
+//       <div className="formWrapper">
+//         <img src={background} className="background" />
+//         <h2 className="logo">Weclome Back</h2>
+//         <span className="title">Welcome! Please login to continue.</span>
+//         <form onSubmit={handleSubmit}>
+//           <input required type="email" placeholder="email" />
+//           <input required type="password" placeholder="password" />
+//           <button>Sign In</button>
+//           {err && <span>Something went wrong ! </span>}
+//         </form>
+//         <p>
+//           Do you have an account? <Link to="/register">Register</Link>
+//         </p>
+//       </div>
+//     </div>
