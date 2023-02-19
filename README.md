@@ -10,7 +10,7 @@ A Realtime Chat Application built using React JS and Firebase. Deployed on Fireb
 #### **Features:**
 - Login and Logout Functionality
 - Add Friend
--  Image and Text Messages
+- Send Image and Text Messages
 - Neat and clean UI
 
 #### **Built With:**
