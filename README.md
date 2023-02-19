@@ -1,3 +1,18 @@
+# About The Project
+
+A Realtime Chat Application built using React JS and Firebase. Deployed on Firebase.
+
+[**Watch Live Demo**]((https://chat-application-ff3d2.web.app/) "**Watch Live Demo!**")
+
+[![](https://iili.io/H1M4C0J.png)](https://iili.io/H1M4C0J.png)
+
+#### **Features:**
+- Video Page with controlled video playback
+- Filtering videos by categories in sidebar
+- Search video or channel feature
+- Channel Page
+- Related videos section
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
